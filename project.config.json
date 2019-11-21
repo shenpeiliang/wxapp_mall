@@ -1,0 +1,201 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.6",
+	"appid": "wx8f7c7af5ef3defc3",
+	"projectname": "demo",
+	"cloudfunctionTemplateRoot": "",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 21,
+			"list": [
+				{
+					"id": -1,
+					"name": "商品详情页",
+					"pathName": "pages/goods/detail/index",
+					"query": "id=54",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "商品评论页",
+					"pathName": "pages/goods/comment/index",
+					"query": "id=54",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员中心",
+					"pathName": "pages/user/home/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "分类",
+					"pathName": "pages/category/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "测试",
+					"pathName": "pages/test/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "会员中心",
+					"pathName": "pages/user/home/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "密码页",
+					"pathName": "pages/user/safe/pass/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "地址管理",
+					"pathName": "pages/user/address/lists/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "邮箱",
+					"pathName": "pages/user/safe/email/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人资料",
+					"pathName": "pages/user/info/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "图文列表",
+					"pathName": "pages/article/lists/index",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "图文详情",
+					"pathName": "pages/article/detail/index",
+					"query": "id=31",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "商品详情",
+					"pathName": "pages/goods/detail/index",
+					"query": "id=54",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品列表",
+					"pathName": "pages/goods/lists/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/user/cart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单管理",
+					"pathName": "pages/user/order/lists/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 16,
+					"name": "订单详情",
+					"pathName": "pages/user/order/detail/index",
+					"query": "id=94",
+					"scene": null
+				},
+				{
+					"id": 17,
+					"name": "订单提交",
+					"pathName": "pages/user/order/form/index",
+					"query": "gid=54&sid=20&quantity=2&ftype=order",
+					"scene": null
+				},
+				{
+					"id": 18,
+					"name": "前往支付",
+					"pathName": "pages/user/order/pay/index",
+					"query": "id=96",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "订单评论",
+					"pathName": "pages/user/order/comment/index",
+					"query": "id=94",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "定时器",
+					"pathName": "pages/timer/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

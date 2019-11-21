@@ -1,0 +1,14 @@
+<!--components/modal.wxml-->
+<!-- 使用：<my-modal show="true"/> -->
+<view class='mask' wx:if='{{show}}' bindtap='clickMask'>
+  <view class='modal-content' style='height:{{height}};width:{{width}}' catchtap='clickContent'>
+    <view class="close iconfont icon-icon-cross-empty" catchtap='cancel' wx:if='{{isShowClose}}'></view>
+    <scroll-view scroll-y='{{scrollY}}' class='main-content'>
+      <slot></slot>
+    </scroll-view>
+    <view class='modal-btn-wrapper' wx:if='{{showBtn}}'>
+      <view class='cancel-btn' catchtap='cancel'>取消</view>
+      <view class='confirm-btn' catchtap='confirm'>确定</view>
+    </view>
+  </view>
+</view>

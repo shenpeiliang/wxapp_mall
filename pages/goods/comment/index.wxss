@@ -1,0 +1,6 @@
+/* pages/goods/comment/index.wxss */
+@import '../../../style/comment.wxss';
+.list-section{
+        padding: 10rpx 8rpx;
+        background-color:#fff;
+}

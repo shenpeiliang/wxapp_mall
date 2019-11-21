@@ -1,0 +1,2 @@
+/* components/search/search.wxss */
+@import '../../style/search.wxss';

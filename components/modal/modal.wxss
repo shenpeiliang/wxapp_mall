@@ -1,0 +1,64 @@
+/* components/modal.wxss */
+@import '../../style/fonts/iconfont.wxss';
+.mask{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 9999;
+}
+.modal-content{
+        position: relative;
+}
+.close{
+        position:absolute;
+        right: 0;
+        top:0;
+        z-index:9999;
+        display: flex;
+        width: 100rpx;
+        height: 100rpx;
+        justify-content: center;
+        align-items: center;
+        font-size: 66rpx;
+}
+
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.modal-btn-wrapper{
+  display: flex;
+  width:100%;
+  flex-direction: row;
+  border-top: 2rpx solid rgba(7,17,27,0.1);
+}
+
+.cancel-btn, .confirm-btn{
+  flex: 1;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  color:#1aad16;
+}
+
+.cancel-btn{
+  color:rgba(7,17,27,0.6);
+  border-right: 2rpx solid rgba(7,17,27,0.1);
+}
+
+.main-content{
+  flex: 1;
+  height: 100%;
+  overflow-y: hidden; 
+}

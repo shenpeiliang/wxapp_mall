@@ -1,0 +1,176 @@
+<!--index.wxml-->
+<my-grant show="{{is_not_login}}" />
+<view class="tab-fixed">
+        <view class="col-1 section-white tab">
+                <block wx:for="{{tabs}}" wx:key="{{index}}">
+                        <view catchtap='selectTab' class="flex-center {{curentTabIndex == index ? 'active' : ''}}" data-index="{{index}}">{{item.title}}</view>
+                </block>
+        </view>
+</view>
+
+<view class="section-fixed" style="height: {{windowHeight - 34 - 50}}px;">
+        <swiper style="height: {{windowHeight - 34 - 50}}px;" bindchange="tabChange" current="{{curentTabIndex}}">
+                <swiper-item>
+                        <scroll-view scroll-y='true' scroll-top='{{tabs[0].topNum}}' bindscroll='bindScroll'>
+
+                                <block wx:if="{{slides.length}}">
+                                        <view class="slide">
+                                                <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}">
+                                                        <block wx:for="{{slides}}" wx:key="index">
+                                                                <swiper-item>
+                                                                        <image src="{{item.img}}" class="slide-image" catchtap='bindPreviewImg'/>
+                                                                </swiper-item>
+                                                        </block>
+                                                </swiper>
+                                        </view>
+                                </block>
+
+
+                                <view class="section">
+                                        <view class="title">
+                                                <text>{{goods.title}}</text>
+                                        </view>
+                                        <view class="price">
+                                                <text>¥{{goods.price}}</text>
+                                        </view>
+                                </view>
+                                <view class="section-action">
+                                        <view class="freight">
+                                                <text>发货地址：{{goods.freight.linkage}}</text>
+                                        </view>
+                                        <view class="freight">
+                                                <text>发货时间：{{goods.freight.post_time_plan}}</text>
+                                        </view>
+                                        <view class="select-spec" catchtap="bindShowModal">
+                                                选择
+                                                <text class="result">{{goods.spec}}</text>
+                                                <text class="iconfont icon-youjiantou"></text>
+                                        </view>
+                                </view>
+                                <!-- 加载提示s -->
+                                <my-loading isLoading="{{isLoading}}" />
+                                <!-- 加载提示e -->
+                                <view class="tab-content-item tab-content-0 section-white">
+                                        <block wx:if="{{tabs[0].content}}">
+                                                <rich-text nodes="{{tabs[0].content}}"></rich-text>
+                                        </block>
+                                </view>
+
+                        </scroll-view>
+                </swiper-item>
+                <swiper-item>
+                        <scroll-view scroll-y='true' scroll-top='{{tabs[1].topNum}}' bindscroll='bindScroll'>
+                                <!-- 加载提示s -->
+                                <my-loading isLoading="{{isLoading}}" />
+                                <!-- 加载提示e -->
+                                <view class="tab-content-item tab-content-1 section-white">
+                                        <block wx:if="{{tabs[1].content}}">
+                                                <rich-text nodes="{{tabs[1].content}}"></rich-text>
+                                        </block>
+                                </view>
+                        </scroll-view>
+                </swiper-item>
+                <swiper-item>
+                        <scroll-view scroll-y='true' scroll-top='{{tabs[2].topNum}}' bindscroll='bindScroll'>
+                                <!-- 加载提示s -->
+                                <my-loading isLoading="{{isLoading}}" />
+                                <!-- 加载提示e -->
+                                <view class="tab-content-item tab-content-2 section-white">
+                                        <block wx:if="{{tabs[2].content}}">
+                                                <rich-text nodes="{{tabs[2].content}}"></rich-text>
+                                        </block>
+                                </view>
+                        </scroll-view>
+                </swiper-item>
+                <swiper-item>
+                        <scroll-view scroll-y='true' scroll-top='{{tabs[3].topNum}}' bindscroll='bindScroll'>
+                                <!-- 加载提示s -->
+                                <my-loading isLoading="{{isLoading}}" />
+                                <!-- 加载提示e -->
+                                <view class="tab-content-item tab-content-3 section-white">
+                                        <block wx:if="{{tabs[3].content.lists}}">
+                                                <view class="goods-comment" wx:for-items="{{tabs[3].content.lists}}" wx:key="index">
+                                                        <view class="user-info">
+                                                                <view class="flex-center">
+                                                                        <image wx:if="{{item.utype == 0 && item.user_img}}" src="{{app.globalData.imgServer}}{{item.user_img}}" class="img" />
+                                                                        <image wx:elif="{{item.utype == 1 && item.user_img}}" src="{{item.user_img}}" class="img" />
+                                                                        <image wx:else src="../../../images/member.jpg" class="img" />
+                                                                </view>
+                                                                <text class="flex-center txt-overflow">{{item.user_name}}</text>
+                                                        </view>
+                                                        <view class="user-comment">
+                                                                <view>{{item.content}}</view>
+                                                                <text class="txt-overflow">{{item.dateline}}</text>
+                                                        </view>
+                                                </view>
+                                        </block>
+                                        <view wx:if="{{tabs[3].content.page > 1}}" data-id="{{goods.id}}" catchtap="bindTap" data-route='goodsComment' class="flex-center link-more-comment">查看更多>></view>
+                                </view>
+                        </scroll-view>
+                </swiper-item>
+        </swiper>
+</view>
+<!-- 规格 -->
+<my-modal show="{{isShowModal}}" bind:myEvent="bindConfirm" height="auto" width="100%">
+        <view class="goods-spec-section">
+                <view class="goods-spec-preview">
+                        <image class="flex-center" src="{{goodsSpecDefaultImg}}"  catchtap='bindPreviewImg' data-src="{{goodsSpecDefaultImg}}" />
+                        <view class="goods-spec-header-des">
+                                <view class="title">
+                                        <text>{{goods.title}}</text>
+                                </view>
+                                <view class="price">
+                                        <text>¥{{goods.price}}</text>
+                                </view>
+                        </view>
+                </view>
+
+                <view class="flex-center goods-spec-select-title">选择{{goods.spec}}：</view>
+                <view class="goods-spec">
+                        <block wx:for-items="{{goods.spec_list}}" wx:key="index">
+                                <view class="goods-spec-item {{selectSpecData.sid == item.id ? 'goods-spec-active' : ''}}" catchtap="goodsSpecSelect" data-id="{{item.id}}" data-image="{{app.globalData.imgServer}}{{item.img ? item.img : goods.small_img}}" data-price="{{item.price}}"
+                                        data-sku="{{item.stock}}">
+
+                                        <view class="goods-spec-item-box">
+                                                <view class="flex-center  txt-overflow">{{item.name}}</view>
+                                        </view>
+                                </view>
+                        </block>
+                </view>
+
+                <view class="goods-spec-select-section">
+                        <view class="desc">
+                                <text class="num">购买数量</text>
+                                <text class="sku">（库存：{{selectSpecData.sku}}{{goods.unit}}）</text>
+                                <text class="price">¥{{selectSpecData.price}}</text>
+                        </view>
+                        <view class="number">
+                                <view class="flex-center num-icon num-ac {{numAcZero}}" catchtap="changeNum" data-action="ac">-</view>
+                                <view class="flex-center num-input">
+                                        <input type="number" disabled="true" value='{{selectSpecData.quantity}}' />
+                                </view>
+                                <view class="flex-center num-icon num-dc" catchtap="changeNum" data-action="dc">+</view>
+                        </view>
+                </view>
+
+        </view>
+</my-modal>
+<!-- 底部菜单 -->
+<view class="footer-section">
+        <view class="footer-item-nav">
+                <view class="flex-center nav" catchtap="bindTap" data-route='indexHome'>
+                        <view class="iconfont icon-shouye"></view>
+                        <view>首页</view>
+                </view>
+                <view class="flex-center nav">
+                        <view class="iconfont icon-dianpu"></view>
+                        <view>店铺</view>
+                </view>
+                <view class="flex-center nav" catchtap="bindTap" data-route='userCart'>
+                        <view class="iconfont icon-gouwuche"></view>
+                        <view>购物车</view>
+                </view>
+        </view>
+        <view class="flex-center footer-item footer-item-buy" catchtap="bindShowModal" data-action="order">立即购买</view>
+        <view class="flex-center footer-item footer-item-cart" catchtap="bindShowModal" data-action="cart">加入购物车</view>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/search/index.wxml-->
+<my-search id="history" bind:searchEvent="searchEvent" />

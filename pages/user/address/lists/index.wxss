@@ -1,0 +1,89 @@
+/* pages/user/address/home/index.wxss */
+@import '../../../../style/form.wxss';
+@import '../../../../style/order.wxss';
+
+.header {
+        color: #8a6d3b;
+        height: 58rpx;
+        font-size: 30rpx;
+}
+
+.item-content {
+        display: flex;
+        flex: auto;
+        flex-wrap: wrap;
+}
+
+.item-1 {
+        margin: 10rpx 0;
+}
+
+.item-1 .title {
+        flex: auto;
+        align-items: center;
+        display: flex;
+        font-size: 34rpx;
+        font-weight: bold;
+        height: initial;
+        line-height: 44rpx;
+}
+
+.item-2 {
+        color: #999;
+        font-size: 32rpx;
+        margin-bottom: 20rpx;
+}
+
+.scroll-main {
+        margin-bottom: 100rpx;
+}
+
+.btn-add {
+        background-color: #ce3c39;
+        display: flex;
+        color: #fff;
+        font-size: 38rpx;
+}
+
+.item-action {
+        height: 68rpx;
+        align-items: center;
+        font-size: 30rpx;
+}
+
+.a-right {
+        justify-content: flex-end;
+}
+
+.a-right view, .a-left view {
+        display: flex;
+        height: 68rpx;
+        align-items: center;
+}
+
+.a-edit {
+        margin-right: 22rpx;
+}
+
+.a-right view .iconfont {
+        margin-left: 30rpx;
+}
+
+.item-action .icon-zhengque {
+        font-size: 56rpx;
+        color: #999;
+}
+
+.item-action .config-default, .item-action .config-default .iconfont {
+        color: #1aad19;
+}
+
+.item-action .icon-bianji {
+        font-size: 56rpx;
+}
+
+.item-action .icon-icon-cross-empty {
+        font-size: 36rpx;
+        margin-right: 4rpx;
+        margin-top: 6rpx;
+}

@@ -1,0 +1,30 @@
+<!--pages/category/index.wxml-->
+<view class="show-default">
+                <view class='wh-padding search-top'>  
+                        <view class='search-container'>
+                                <icon type="search" size='14' />
+                                <input placeholder='请输入关键字' catchtap='bindTap' data-route='search'></input>  
+                        </view>
+                </view>
+        </view>
+<view class="section-left">
+        <view wx:for-items="{{data}}" wx:key="index" class="flex-center item {{currentTab == prefix + (index) ? 'on' : ''}}" bindtap="swichNav" data-id="{{index}}">{{item.title}}</view>
+</view>
+<view class="section-main">
+        <block wx:if="{{data}}">
+                <scroll-view scroll-y="true" scroll-into-view="{{toView}}" bindscroll="bindScroll" class="section-right {{currentTab == prefix + 0 ? 'active' : ''}}" style="height:{{windowHeight}}px">
+                        <block wx:for-items="{{data}}" wx:key="index">
+                                <view class="section-area" id="{{prefix + index}}">
+                                        <view class="cate-parent">{{item.title}}</view>
+                                        <view class="col-1 section-con">
+                                                <view wx:for-items="{{item._child}}" data-cid="{{item.id}}" wx:key="i" class="flex-center item" catchtap="bindLinkTap">
+                                                        <image src="{{app.globalData.imgServer + item.small_img}}" />
+                                                        <view class="flex-center title">{{item.title}}</view>
+                                                </view>
+                                        </view>
+
+                                </view>
+                        </block>
+                </scroll-view>
+        </block>
+</view>

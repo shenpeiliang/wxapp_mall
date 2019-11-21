@@ -1,0 +1,13 @@
+<!--components/select/select.wxml-->
+<view class='select-box' style="width:{{width}}">
+    <view class='select-default' bindtap='selectToggle'>
+        <view class='txt-overflow option-left'><text class='txt-overflow'>{{optionSelected.text}}</text></view>
+        <text class='iconfont icon-xiajiantou option-right'  animation="{{animationData}}"></text>
+    </view>
+    <view class='select-option' wx:if="{{selectShow}}">
+        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='index' class='option-left-item' bindtap='setText'>
+                <text class='txt-overflow'>{{item.text}}</text>
+                <text class='iconfont option-right'></text>
+        </view>
+    </view>
+</view>

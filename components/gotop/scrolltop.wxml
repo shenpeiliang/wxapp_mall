@@ -1,0 +1,2 @@
+<!--components/gotop/scrolltop.wxml-->
+<view class="goto-top iconfont icon-jiantou_yemian_xiangshang" hidden='{{isShowFloor}}' catchtap="goTop"></view>

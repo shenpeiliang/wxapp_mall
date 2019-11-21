@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<block wx:if="{{slides.length}}">
+        <view class="slide">
+                <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicatorActiveColor}}">
+                        <block wx:for="{{slides}}" wx:key="index">
+                                <swiper-item>
+                                        <image src="{{item.img}}" bindtap='bindSlideTap' data-url="{{item.url}}" class="slide-image" />
+                                </swiper-item>
+                        </block>
+                </swiper>
+        </view>
+</block>
+<block wx:if="{{navs}}">
+        <view class="navs">
+                <block wx:for-items="{{navs}}" wx:key="index">
+                        <view class="col-3 nav-item" catchtap="bindTap" data-route='{{item.route}}'>
+                                <image src="{{item.icon}}" class="nav-image" />
+                                <text>{{item.name}}</text>
+                        </view>
+                </block>
+        </view>
+</block>
+
+<block wx:if="{{goods}}">
+        <view class="goods-top">
+                <image src="../../images/icon-hot.png"></image>
+                <text>火爆热销</text>
+        </view>
+        <view class="goods">
+                <block wx:for-items="{{goods}}" wx:key="index">
+                        <view class="col-2 goods-section">
+                                <view class="item" catchtap="bindTap" data-route='goodsDetail' data-id="{{item.id}}">
+                                        <image src="{{app.globalData.imgServer}}{{item.small_img}}" class="img" />
+                                        <text class="title">{{item.title}}</text>
+                                        <view class="footer">
+                                                <view class="col-2 txt-overflow price">
+                                                        <text>¥{{item.price}}</text>
+                                                </view>
+                                                <view class="col-2 txt-overflow bought">
+                                                        <text>{{item.bought}}人付款</text>
+                                                </view>
+                                        </view>
+                                </view>
+                        </view>
+                </block>
+        </view>
+</block>

@@ -1,0 +1,136 @@
+<!--pages/user/order/detail/index.wxml-->
+<my-grant show="{{is_not_login}}" />
+<view class="col-1 order-state">
+        <view class="flex-center" wx:if="{{pageData.status == 1}}">
+                <view class="iconfont icon-ico_meiyoushuju"></view>待付款</view>
+        <view class="flex-center" wx:if="{{pageData.status == 2}}">
+                <view class="iconfont icon-ico_meiyoushuju"></view>已付款</view>
+        <view class="flex-center" wx:if="{{pageData.status == 3}}">
+                <view class="iconfont icon-ico_meiyoushuju"></view>待收货</view>
+        <view class="flex-center" wx:if="{{pageData.status == 4}}">
+                <view class="iconfont icon-ico_meiyoushuju"></view>已完成</view>
+        <view class="flex-center" wx:if="{{pageData.status == 5}}">
+                <view class="iconfont icon-ico_meiyoushuju"></view>已失效</view>
+</view>
+
+<view class="col-1 section-white order-address">
+        <view class="col-1 section">
+                <view class="flex-center left">
+                        <view class="flex-center bg">
+                                <view class="iconfont icon-left icon-dizhi"></view>
+                        </view>
+                </view>
+                <view class="col-1 right">
+                        <view class="col-1 section-1">
+                                {{pageData.name}}
+                                <text class="tel">{{pageData.mobile}}</text>
+                        </view>
+                        <view class="col-1 section-2">
+                                {{pageData.province + pageData.city + pageData.county + pageData.address}}
+                        </view>
+                </view>
+        </view>
+</view>
+
+<view class="col-1 section-white fill-box-4 order-con">
+        <view class="container">
+                <view class="col-1">
+                        <view class="item">订单编号：{{pageData.order_sn}}</view>
+                        <view class="flex-center btn-copy" catchtap='bindCopy' data-sn="{{pageData.order_sn}}">复制</view>
+                </view>
+                <view>创建时间：{{pageData.dateline}}</view>
+        </view>
+</view>
+
+<view class="col-1 section-white fill-box-4 order-con" wx:if="{{pageData.status == 4 || pageData.status == 3 || pageData.status == 2}}">
+        <view class="container">
+                <view>付款方式：{{pageData.payment_name}}</view>
+                <view class="col-1">
+                        <view class="item">订单编号：{{pageData.out_trade_no}}</view>
+                        <view class="flex-center btn-copy" catchtap='bindCopy' data-sn="{{pageData.out_trade_no}}">复制</view>
+                </view>
+                <view>付款时间：{{pageData.pay_time}}</view>
+        </view>
+</view>
+
+<view class="col-1 section-white fill-box-4  order-con" wx:if="{{pageData.status == 4 || pageData.status == 3}}">
+        <view class="container">
+                <view>物流名称：{{pageData.post_name}}</view>
+                <view class="col-1">
+                        <view class="item">物流编号：{{pageData.post_code}}</view>
+                        <view class="flex-center btn-copy" catchtap='bindCopy' data-sn="{{pageData.post_code}}">复制</view>
+                </view>
+                <view>创建时间：{{pageData.send_time}}</view>
+        </view>
+</view>
+
+
+<view class="section-con">
+        <view class="col-1 section-white fill-box-10">
+                <view class="col-1">
+                        <view class="col-1 store">
+                                <view class="flex-center iconfont icon-dianpu left"></view>
+                                <view class="col-1 right txt-overflow">
+                                        {{pageData.store_name}}
+                                </view>
+                        </view>
+                </view>
+        </view>
+        <view wx:for="{{pageData._childs}}" wx:key="index" class="col-1 section-white">
+                <view>
+                        <view class="col-1 goods-item">
+                                <view class="col-1 right">
+                                        <view class="img" catchtap='bindTap' data-id="{{item.goods_id}}" data-route='goodsDetail'>
+                                                <image src="{{app.globalData.imgServer + item.small_img}}" />
+                                        </view>
+                                        <view class="col-1 goods">
+                                                <view class="txt-overflow title" catchtap='bindTap' data-id="{{item.goods_id}}" data-route='goodsDetail'>{{item.goods_name}}</view>
+                                                <view class="spec">规格：{{item.goods_spec_name}}</view>
+                                                <view class="col-1 more">
+                                                        <view class="txt-overflow price">￥{{item.price}}</view>
+                                                        <view class="goods-spec-select-section">x{{item.quantity}}</view>
+                                                </view>
+                                        </view>
+                                </view>
+                        </view>
+                </view>
+        </view>
+        <view class="col-1 section-white calculate order-detail-calculate">
+                共
+                <view class="num">{{pageData.goods_number}}</view>件商品
+                <view class="txt-null"></view>
+                合计：
+                <view class="num">￥{{pageData.amount}}</view>
+                <view class="txt-null"></view>
+                运费：
+                <view class="num">￥{{pageData.post_price}}</view>
+        </view>
+</view>
+
+
+<view class="col-1 section-white fill-box-4 order-logs {{(pageData.status ==1 || (pageData.status == 4 && pageData.is_comment == 0)) ? 'footer-bottom-fill-height' : ''}}">
+        <view class="container">
+                <view class="item" wx:for="{{pageData.logs}}" wx:key="index">
+                        <view class="item-time">{{item.add_time}}</view>
+                        <view>{{item.title}}</view>
+                        <view>{{item.remark}}</view>
+                </view>
+        </view>
+</view>
+
+<view class="section-white footer-section" wx:if="{{pageData.status == 1}}">
+        <view class="col-1 footer-section-item">
+                <view class="right">
+                        <view class="flex-center right-item-2 item-fill-all" catchtap='bindTap' data-id="{{pageData.id}}" data-route='userOrderPay'>去付款</view>
+                </view>
+        </view>
+
+</view>
+<view class="section-white footer-section" wx:if="{{pageData.status == 4 && pageData.is_comment == 0}}">
+        <view class="col-1 footer-section-item">
+                <view class="right">
+                        <view class="flex-center right-item-2 item-fill-all" catchtap='bindTap' data-id="{{pageData.id}}" data-route='userOrderComment'>去评论</view>
+                </view>
+        </view>
+
+</view>

@@ -1,0 +1,2 @@
+/* pages/user/safe/tel/index.wxss */
+@import '../../../../style/form.wxss';

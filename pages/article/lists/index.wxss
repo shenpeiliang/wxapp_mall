@@ -1,0 +1,39 @@
+/* pages/article/lists/index.wxss */
+@import '../../../style/article.wxss';
+
+.left {
+        flex: 1;
+        padding-right: 10rpx;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        align-content: space-between;
+}
+
+.left .title {
+        font-weight: bold;
+        font-size: 30rpx;
+        display: block;
+        height: 110rpx;
+        line-height: 38rpx;
+        width:100%;
+        overflow:hidden;
+}
+
+.left .dateline {
+        color: #999;
+        display: flex;
+        align-items: flex-end;
+        height: 46rpx;
+        width: 100%;
+}
+
+.right {
+        width: 286rpx;
+        height: 186rpx;
+}
+
+.right image {
+        width: 100%;
+        height: 100%;
+}

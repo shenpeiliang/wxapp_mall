@@ -1,0 +1,5 @@
+/* pages/user/address/form/index.wxss */
+@import '../../../../style/form.wxss';
+textarea{
+        height:90rpx;
+}

@@ -1,0 +1,17 @@
+/* components/gotop/scrolltop.wxss */
+@import '../../style/fonts/iconfont.wxss';
+.goto-top{
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     color: #fff;
+     width: 80rpx;
+     height: 80rpx;
+     position: fixed;
+     right: 30rpx;
+     bottom: 150rpx;
+     font-size: 48rpx;
+     border-radius: 50%;
+     background-color:#CCC;
+     z-index: 9999;
+}

@@ -1,0 +1,73 @@
+/**index.wxss**/
+@import '../../style/goods.wxss';
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+/***********************************************************************************/
+.slide{
+        height:300rpx;
+        width:100%;             
+        background-color:#fff;
+}
+.slide swiper{
+        height:inherit;
+}
+.slide-image{
+        display: block;
+        width: 100%;
+        height:300rpx;
+}
+
+.navs {
+  display: flex;
+  flex-wrap: wrap;
+  flex: auto;
+  margin-bottom:30rpx;
+  background-color:#fff;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding:20rpx 10rpx;
+}
+
+.nav-item .nav-image {
+  width: 160rpx;
+  height: 126rpx;
+}
+
+.nav-item text {
+  padding-top: 20rpx;
+  font-size: 25rpx;
+}
+.goods-top{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:14rpx 0 20rpx 0;
+        background-color:#fff;
+}
+.goods-top image{
+        width:60rpx;
+        height:60rpx;
+}

@@ -1,0 +1,89 @@
+<!--pages/user/home/index.wxml-->
+<my-grant show="{{is_not_login}}" />
+<view class="container section-white">
+        <view class="row header">
+                <image class="bg" src="../../../images/user-bg.jpg" />
+                <view class="user">
+                        <open-data class="avatar" type="userAvatarUrl"></open-data>
+                        <view class="user-right">
+                                <open-data class="txt-overflow  nickname" type="userNickName" lang="zh_CN"></open-data>
+                                <text class="iconfont icon-VIP txt-overflow">普通会员</text>
+                        </view>
+                </view>
+        </view>
+</view>
+<view class="col-1 section-white fill-box-10">
+        <view class="container">
+                <view class="order">
+                        <view class="col-5 item"  catchtap='bindTap' data-route='userOrderList' data-id='1'>
+                                <view class="iconfont icon-daifukuan flex-center icon"></view>
+                                <view class="flex-center title">待付款</view>
+                        </view>
+                        <view class="col-5 item"  catchtap='bindTap' data-route='userOrderList' data-id='2'>
+                                <view class="iconfont icon-daifahuo flex-center icon"></view>
+                                <view class="flex-center title">待发货</view>
+                        </view>
+                        <view class="col-5 item"  catchtap='bindTap' data-route='userOrderList' data-id='3'>
+                                <view class="iconfont icon-yifahuo flex-center icon"></view>
+                                <view class="flex-center title">已发货</view>
+                        </view>
+                        <view class="col-5 item"  catchtap='bindTap' data-route='userOrderList' data-id='4'>
+                                <view class="iconfont icon-yiwanchengdingdan flex-center icon"></view>
+                                <view class="flex-center title">已完成</view>
+                        </view>
+                        <view class="col-5 item" catchtap='bindTap' data-route='userOrderList' data-id='5'>
+                                <view class="iconfont icon-asset-expired flex-center icon"></view>
+                                <view class="flex-center title">已失效</view>
+                        </view>
+                </view>
+        </view>
+</view>
+<view class="col-1 section-white fill-box-4">
+        <view class="flex-center action-item" catchtap='bindTap' data-route='userOrderList'>
+                <view class="iconfont icon-left icon-dingdan">
+                </view>
+                <view class="title">全部订单</view>
+                <view class="iconfont icon-youjiantou icon-right"></view>
+        </view>
+</view>
+<view class="col-1 section-white fill-box-10">
+        <view class="flex-center action-item" catchtap='bindTap' data-route='userCart'>
+                <view class="iconfont icon-left icon-gouwuche">
+                </view>
+                <view class="title">购物车</view>
+                <view class="iconfont icon-youjiantou icon-right"></view>
+        </view>
+</view>
+<view class="col-1 section-white fill-box-10">
+        <view class="flex-center action-item" catchtap='bindTap' data-route='userAddress'>
+                <view class="iconfont icon-left icon-dizhi">
+                </view>
+                <view class="title">收货地址</view>
+                <view class="iconfont icon-youjiantou icon-right"></view>
+        </view>
+</view>
+<view class="col-1 section-white fill-box-10">
+        <view class="flex-center action-item" catchtap='bindTap' data-route='userSafe'>
+                <view class="iconfont icon-left icon-anquan">
+                </view>
+                <view class="title">安全中心</view>
+                <view class="iconfont icon-youjiantou icon-right"></view>
+        </view>
+</view>
+<view class="col-1 section-white fill-box-4">
+        <view class="flex-center action-item" catchtap='bindTap' data-route='userInfo'>
+                <view class="iconfont icon-left icon-gerenziliao">
+                </view>
+                <view class="title">个人资料</view>
+                <view class="iconfont icon-youjiantou icon-right"></view>
+        </view>
+</view>
+<view class="col-1 section-white fill-box-4">
+        <view class="flex-center action-item"  catchtap='bindTap' data-route='articleList' data-id="1">
+                <view class="iconfont icon-left icon-bangzhu">
+                </view>
+                <view class="title">帮助中心</view>
+                <view class="iconfont icon-youjiantou icon-right"></view>
+        </view>
+</view>
+<view class="footer"></view>

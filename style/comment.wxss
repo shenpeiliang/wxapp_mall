@@ -1,0 +1,52 @@
+.user-info .img {
+        width: 80rpx;
+        height: 80rpx;
+        border-radius: 80rpx;
+}
+
+.user-info text {
+        color: #999;
+        margin-top: 4px;
+        display: block;
+        text-align: center;
+}
+
+.goods-comment {
+        display: flex;
+        margin: 10rpx 0 30rpx 0;
+        border-bottom: 1px solid #f4f4f4;
+        padding: 16rpx 4rpx;
+}
+
+.goods-comment .user-info {
+        width: 160rpx;
+}
+
+.goods-comment .user-comment {
+        flex: auto;
+        padding: 8rpx 20rpx;
+        position: relative;
+}
+
+.goods-comment .user-info, .goods-comment .user-comment {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+}
+
+.user-comment view {
+        line-height: 34rpx;
+        margin-bottom: 34rpx;
+}
+
+.user-comment text {
+        color: #999;
+        text-align: right;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+}
+
+.link-more-comment {
+        height: 80rpx;
+}

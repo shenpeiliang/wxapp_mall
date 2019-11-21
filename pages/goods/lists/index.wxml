@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<my-scrolltop id="scrolltop" bind:myEvent="scrollTop" />
+<view class="section-white col-1 sort">
+        <view class="flex-center item {{searchQuery.order == 'default' ? 'active' : ''}}" catchtap='bindOrder' data-otype='default'>默认</view>
+        <view class="flex-center item {{searchQuery.order == 'new' ? 'active' : ''}}" catchtap='bindOrder' data-otype='new'>最新</view>
+        <view class="flex-center item {{searchQuery.order == 'sales' ? 'active' : ''}}" catchtap='bindOrder' data-otype='sales'>销量</view>
+        <view class="flex-center item {{searchQuery.order == 'price' ? 'active' : ''}}" catchtap='bindOrder' data-otype='price'>价格
+                <view class="right-icon">
+                        <view class="iconfont icon-iconfonticontrianglecopy icon {{searchQuery.order == 'price' && priceOrderType == 'asc'  ? 'active' : ''}}"></view>
+                        <view class="iconfont icon-xiajiantou  icon {{searchQuery.order == 'price' && priceOrderType == 'desc'  ? 'active' : ''}}"></view>
+                </view>
+        </view>
+        <view class="flex-center item" catchtap="bindTap" data-route='category'>筛选</view>
+</view>
+<view class="section-fixed">
+        <scroll-view scroll-y='true' scroll-top='{{topNum}}' bindscroll='bindScroll' style="height:{{windowHeight - 35}}px" bindscrolltolower='lower'>
+                <view wx:if="{{goods.length == 0}}" class="flex-center no-data">
+                        <image src="../../../images/no-data.png" class="flex-center" />
+                        <view class="flex-center">没有符合条件的数据~</view>
+                        <view class="btn-link-goods" catchtap='bindGetAll'>查看全部商品</view>
+                </view>
+                <view class="goods" wx:if="{{goods}}">
+                        <block wx:for-items="{{goods}}" wx:key="index">
+                                <view class="col-2 goods-section">
+                                        <view class="item" catchtap="bindTap" data-route='goodsDetail' data-id="{{item.id}}">
+                                                <image src="{{app.globalData.imgServer}}{{item.small_img}}" class="img" />
+                                                <text class="title">{{item.title}}</text>
+                                                <view class="footer">
+                                                        <view class="col-2 txt-overflow price">
+                                                                <text>¥{{item.price}}</text>
+                                                        </view>
+                                                        <view class="col-2 txt-overflow bought">
+                                                                <text>{{item.bought}}人付款</text>
+                                                        </view>
+                                                </view>
+                                        </view>
+                                </view>
+                        </block>
+                </view>
+
+                <!-- 加载提示s -->
+                <my-loading isLoading="{{isLoading}}" isLoadComplete="{{isLoadComplete}}" />
+                <!-- 加载提示e -->
+        </scroll-view>
+</view>

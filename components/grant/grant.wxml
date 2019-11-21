@@ -1,0 +1,27 @@
+<!--components/grant.wxml-->
+<view wx:if='{{show}}' class="section">
+        <view wx:if="{{canIUse}}">
+        <view class='flex-center header'>
+                <view class="avatar">
+                        <open-data type="userAvatarUrl"></open-data>
+                </view>
+                <view class="flex-center nickname">
+                        <open-data type="userNickName"></open-data>
+                </view>
+        </view>
+
+        <view class='content'>
+                <view class="flex-center">申请获取以下权限</view>
+                <text class="flex-center">获得你的公开信息(昵称，头像等)</text>
+        </view>
+        
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+                授权登录
+        </button>
+        </view>
+        
+        <view wx:else class='flex-center tip-update-version'>
+                <icon type="warn"/>
+                <text>请升级微信版本</text>
+        </view>
+</view>

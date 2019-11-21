@@ -1,0 +1,78 @@
+<!--pages/user/order/comment/index.wxml-->
+<my-grant show="{{is_not_login}}" />
+<view class="footer-bottom-fill-height section-con">
+        <block wx:for="{{pageData}}" wx:key="index" wx:for-index="gidx">
+                <view class="col-1 section-white">
+                        <view>
+                                <view class="col-1 goods-item">
+                                        <view class="col-1 right">
+                                                <view class="img" catchtap='bindTap' data-id="{{item.goods_id}}" data-route='goodsDetail'>
+                                                        <image src="{{app.globalData.imgServer + item.small_img}}" />
+                                                </view>
+                                                <view class="col-1 goods">
+                                                        <view class="txt-overflow title" catchtap='bindTap' data-id="{{item.goods_id}}" data-route='goodsDetail'>{{item.goods_name}}</view>
+                                                        <view class="spec">规格：{{item.goods_spec_name}}</view>
+                                                        <view class="col-1 more">
+                                                                <view class="txt-overflow price">￥{{item.price}}</view>
+                                                                <view class="goods-spec-select-section">x{{item.quantity}}</view>
+                                                        </view>
+                                                </view>
+                                        </view>
+                                </view>
+                                <view class="col-1 grade">
+                                        <view class="left">评分</view>
+                                        <view class="center">{{grades[item.grade - 1].title}}</view>
+                                        <view class="right">
+                                                <block wx:for="{{grades}}" wx:for-item="grade" wx:key="{{index}}" wx:for-index="idx">
+                                                        <view class="iconfont icon-pingjia {{grade.id <= item.grade ? 'selected' : ''}}" catchtap='bindSelectGrade' data-id="{{idx}}" data-gidx="{{gidx}}"></view>
+                                                </block>
+                                        </view>
+                                </view>
+                        </view>
+                </view>
+                <view class="col-1 section-white fill-box-2">
+                        <view class="col-1 message">
+                                <textarea placeholder="{{grades[item.grade - 1].des}}" bindinput="bindInput" data-gidx="{{gidx}}"></textarea>
+                        </view>
+                </view>
+        </block>
+        <view class="col-1 section-white fill-box-2 grade">
+                <view class="left">服务打分</view>
+        </view>
+        <view class="col-1 section-white fill-box-2 grade">
+                <view class="left">宝贝描述</view>
+                <view class="center"></view>
+                <view class="right">
+                        <block wx:for="{{grades}}" wx:for-item="grade" wx:key="{{index}}" wx:for-index="idx">
+                                <view class="iconfont icon-pingjia {{grade.id <= serviceGrade.goods ? 'selected' : ''}}" catchtap='bindSelectGradeService' data-id="{{idx}}" data-service="goods"></view>
+                        </block>
+                </view>
+        </view>
+        <view class="col-1 section-white fill-box-2 grade">
+                <view class="left">商家服务</view>
+                <view class="center"></view>
+                <view class="right">
+                        <block wx:for="{{grades}}" wx:for-item="grade" wx:key="{{index}}" wx:for-index="idx">
+                                <view class="iconfont icon-pingjia {{grade.id <= serviceGrade.store ? 'selected' : ''}}" catchtap='bindSelectGradeService' data-id="{{idx}}"  data-service="store"></view>
+                        </block>
+                </view>
+        </view>
+        <view class="col-1 section-white fill-box-2 grade">
+                <view class="left">发货物流</view>
+                <view class="center"></view>
+                <view class="right">
+                        <block wx:for="{{grades}}" wx:for-item="grade" wx:key="{{index}}" wx:for-index="idx">
+                                <view class="iconfont icon-pingjia {{grade.id <= serviceGrade.freight ? 'selected' : ''}}" catchtap='bindSelectGradeService' data-id="{{idx}}"  data-service="freight"></view>
+                        </block>
+                </view>
+        </view>
+</view>
+
+<view class="section-white footer-section" wx:if="{{pageData}}">
+        <view class="col-1 footer-section-item">
+                <view class="right">
+                        <view class="flex-center right-item-2 item-fill-all" catchtap='bindSave'>提交</view>
+                </view>
+        </view>
+
+</view>

@@ -1,0 +1,64 @@
+<!--pages/user/address/form/index.wxml-->
+<my-grant show="{{is_not_login}}" />
+<view class="col-1 section-white fill-box-4">
+        <view class="flex-center action-item" catchtap='chooseAddress'>
+                <view class="iconfont icon-left">
+                        <image src="../../../../images/wechat.png" />
+                </view>
+                <view class="title">获取微信收货地址</view>
+                <view class="iconfont icon-youjiantou icon-right"></view>
+        </view>
+</view>
+<form bindsubmit="formSubmit">
+        <view class="container section-white fill-box-10">
+                <view class="col-1 fill-box-4 section-main">
+                        <view class="flex-center item">
+                                <view class="title">姓名</view>
+                                <view class="content">
+                                        <input type="text" maxlength="80" name="name" placeholder="请输入姓名" value="{{nameVal}}" bindinput="bindInputName" />
+                                </view>
+                        </view>
+                </view>
+
+        </view>
+        <view class="container section-white">
+                <view class="col-1 fill-box-4 section-main">
+                        <view class="flex-center item">
+                                <view class="title">手机号码</view>
+                                <view class="content">
+                                        <input type="number" maxlength="11" name="tel" placeholder="请输入手机号码" value="{{telVal}}" bindinput="bindInputTel" />
+                                </view>
+                        </view>
+                </view>
+
+        </view>
+        <view class="container section-white">
+                <view class="col-1 fill-box-4 section-main">
+                        <view class="flex-center item">
+                                <view class="title">地区</view>
+                                <view class="content">
+                                        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                                                <view class="picker">
+                                                        {{region[0]}}/{{region[1]}}/{{region[2]}}
+                                                </view>
+                                        </picker>
+                                </view>
+                        </view>
+                </view>
+
+        </view>
+        <view class="container section-white">
+                <view class="col-1 fill-box-4 section-main">
+                        <view class="flex-center item">
+                                <view class="title">详细地址</view>
+                                <view class="content">
+                                        <textarea name="address" value="{{addressVal}}" placeholder="请输入详细地址" placeholder-style="color:#999" style="font-size:32rpx" />
+                                </view>
+                        </view>
+                </view>
+
+        </view>
+        <view class="btn-bottom">
+                <button type="primary" class="flex-center" form-type="submit">确认</button>
+        </view>
+</form>

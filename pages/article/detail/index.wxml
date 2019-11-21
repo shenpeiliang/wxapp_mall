@@ -1,0 +1,19 @@
+<!--pages/article/detail/index.wxml-->
+<my-scrolltop id="scrolltop" bind:myEvent="scrollTop" />
+<scroll-view scroll-y='true' scroll-top='{{topNum}}' bindscroll='bindScroll'> 
+        <view class="col-1 section-white fill-box-4">
+                <view class="container">
+                        <view class="header">
+                                <view class="title">{{pageData.title}}</view>
+                                <view class="time">
+                                        <view class="col-2 iconfont icon-zhengyan click">{{pageData.click}}</view>
+                                        <view class="col-2 dateline">{{pageData.dateline}}</view>
+                                </view>
+                        </view>
+                        <view class="content">
+                                <rich-text nodes="{{pageData.content}}"></rich-text>
+                        </view>
+                </view>
+        </view>
+
+</scroll-view>

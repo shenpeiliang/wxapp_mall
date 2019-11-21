@@ -1,0 +1,46 @@
+/**index.wxss**/
+@import '../../../style/goods.wxss';
+.section-fixed {
+        position: absolute;
+        left: 0;
+        top: 30px;
+        z-index: 998;
+        width: 100%;
+}
+
+.sort{
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 998;
+        width: 100%;
+}
+.sort .item{
+        flex: 1;
+        height: 60rpx;
+        font-size: 30rpx;
+}
+.sort .active{
+        color: #ff5000;
+}
+
+.right-icon{
+        display: flex;
+        width: 32rpx;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+}
+.right-icon .icon{
+        color: #999;
+        position: absolute;
+        left: 0;
+        top: 4px;
+}
+.right-icon .active{
+      color: #ff5000;  
+}
+.right-icon .icon:last-child{
+        top: 12px;
+}

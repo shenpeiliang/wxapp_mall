@@ -1,0 +1,51 @@
+/* components/select/select.wxss */
+@import '../../style/fonts/iconfont.wxss';
+.select-box{
+    position: relative;
+}
+.select-default{
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    display: flex;
+}
+.option-right{
+        display:flex;
+        align-items:center;
+        width:42rpx;
+        justify-content:center;
+}
+.txt-overflow{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+}
+.option-left{       
+        font-size:14px;
+        display:flex;
+        height:68rpx;
+        align-items:center;
+        flex:auto;
+        width:100%;
+        padding:0 12rpx;
+}
+.select-option{
+    background: #fff;
+    width: inherit;
+    position: absolute;
+    left: 0;
+    top: 72rpx;
+    border: 1px solid #e2e2e2;
+    border-top: none;
+    z-index: 3;
+}
+.option-left-item{
+        display: flex;
+        align-items:center;
+        height: 68rpx;
+        border-top: 1px solid #e2e2e2;
+        width:100%;
+        padding: 0 0 0 12rpx;
+}
+.option-left-item:first-child{
+    border-top: none;
+}

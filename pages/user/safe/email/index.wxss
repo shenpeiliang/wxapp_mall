@@ -1,0 +1,2 @@
+/* pages/user/safe/email/index.wxss */
+@import '../../../../style/form.wxss';

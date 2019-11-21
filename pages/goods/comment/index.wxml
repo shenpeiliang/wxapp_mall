@@ -1,0 +1,22 @@
+<!--pages/goods/comment/index.wxml-->
+<scroll-view scroll-y='true' bindscrolltolower='lower' class="list-section">
+        <block wx:if="{{lists}}">
+                <view class="goods-comment" wx:for-items="{{lists}}" wx:key="index">
+                        <view class="user-info">
+                                <view class="flex-center">
+                                        <image wx:if="{{item.utype == 0 && item.user_img}}" src="{{app.globalData.imgServer}}{{item.user_img}}" class="img" />
+                                        <image wx:elif="{{item.utype == 1 && item.user_img}}" src="{{item.user_img}}" class="img" />
+                                        <image wx:else src="../../../images/member.jpg" class="img" />
+                                </view>
+                                <text class="flex-center txt-overflow">{{item.user_name}}</text>
+                        </view>
+                        <view class="user-comment">
+                                <view>{{item.content}}</view>
+                                <text class="txt-overflow">{{item.dateline}}</text>
+                        </view>
+                </view>
+        </block>
+        <!-- 加载提示s -->
+        <my-loading isLoading="{{isLoading}}" isLoadComplete="{{isLoadComplete}}" />
+        <!-- 加载提示e -->
+</scroll-view>

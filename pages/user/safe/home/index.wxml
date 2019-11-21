@@ -1,0 +1,51 @@
+<!--pages/user/safe/index.wxml-->
+<my-grant show="{{is_not_login}}" />
+<view class="col-1 section-white">
+        <view class="container">
+                <text class="header flex-center">建议您开启全部安全设置，以保障账户及资金安全</text>
+        </view>
+</view>
+<view class="col-1 section-white fill-box-10">
+        <view class="container">
+                <view class="col-1 item" catchtap='bindTap' data-route='userSafeTel'>
+                        <view class="col-1 item-1">
+                                <view class="iconfont icon-09 flex-center icon"></view>
+                                <view class="title">手机绑定</view>
+                                <view class="flex-center btn">手机修改</view>
+                        </view>
+                        <view class="col-1 item-2">
+                                绑定个人手机号码，可以及时获取更多的服务信息，和更方便的安全操作
+                        </view>
+                </view>
+        </view>
+</view>
+<!--
+<view class="col-1 section-white fill-box-10">
+        <view class="container">
+                <view class="col-1 item" catchtap='bindTap' data-route='userSafePass'>
+                        <view class="col-1 item-1">
+                                <view class="iconfont icon-mima flex-center icon"></view>
+                                <view class="title">密码登录</view>
+                                <view class="flex-center btn">密码修改</view>
+                        </view>
+                        <view class="col-1 item-2">
+                                请经常更换您的登录密码，且不要和其他账号共用一个密码
+                        </view>
+                </view>
+        </view>
+</view>
+-->
+<view class="col-1 section-white fill-box-10">
+        <view class="container">
+                <view class="col-1 item" catchtap='bindTap' data-route='userSafeEmail'>
+                        <view class="col-1 item-1">
+                                <view class="iconfont icon-youxiang flex-center icon"></view>
+                                <view class="title">邮箱验证</view>
+                                <view class="flex-center btn">邮箱修改</view>
+                        </view>
+                        <view class="col-1 item-2">
+                                进行邮箱验证后，可以用户快速找回账号密码和身份验证操作，保护您的账号安全
+                        </view>
+                </view>
+        </view>
+</view>

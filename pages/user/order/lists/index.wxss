@@ -1,0 +1,64 @@
+@import '../../../../style/order.wxss';
+
+.tab-fixed{
+        width:100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index:999;
+}
+.tab {
+        height: 34px;
+}
+
+.tab view {
+        flex: 1;
+        font-size: 30rpx;
+}
+
+.tab .active {
+        color: #ff5000;
+        border-bottom: 2rpx solid #ff5000;
+}
+
+.section-fixed{
+        position: absolute;
+        left: 0;
+        top: 34px;
+        z-index: 998;
+        width: 100%;
+}
+
+.store .icon-dianpu {
+        width: 60rpx;
+        color: #ff5000;
+        font-size: 38rpx;
+}
+
+.section-btn {
+        height: 100rpx;
+        align-items: center;
+        justify-content: flex-end;
+}
+
+.section-btn .item {
+        margin: 30rpx 10rpx;
+        border: 1px solid #999;
+        padding: 12rpx 18rpx;
+        border-radius: 32rpx;
+}
+
+.section-btn .btn-m {
+        color: #ff5000;
+        border-color: #ff5000;
+}
+
+.store .section-status {
+        justify-content: flex-end;
+        padding-right: 8rpx;
+        flex: none;
+        margin-left: 24rpx;
+}
+.store .section-status view{
+        color: #ff5000;
+}

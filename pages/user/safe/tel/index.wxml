@@ -1,0 +1,33 @@
+<my-grant show="{{is_not_login}}" />
+<view class="container section-white">
+        <view class="header">
+                <view class="iconfont icon-09 flex-center icon"></view>
+                <view class="title flex-center">验证手机号</view>
+                <view class="des flex-center" wx:if="{{telBanded}}">当前绑定的手机号：{{telBanded}}</view>
+        </view>
+</view>
+<form bindsubmit="formSubmit">
+        <view class="container section-white">
+                <view class="col-1 fill-box-4 section-main">
+                        <view class="flex-center item">
+                                <view class="title">手机号码</view>
+                                <view class="content">
+                                        <input type="number" maxlength="11" name="tel" placeholder="请输入要绑定的手机号码" value="{{telVal}}" bindinput="bindInputTel" />
+                                </view>
+                        </view>
+                </view>
+                <view class="col-1 fill-box-4 section-main">
+                        <view class="flex-center item">
+                                <view class="title">验证码</view>
+                                <view class="content code-input">
+                                        <input type="number" maxlength="6" name="code" placeholder="" bindinput="bindInputCode" value="{{codeVal}}" />
+                                </view>
+                                <view class="icon-right get-code" wx:if="{{canGetCode}}" catchtap='getCode'>{{getCodeTxt}}</view>
+                                <view class="icon-right get-code" wx:if="{{!canGetCode}}">{{getCodeTxt}}</view>
+                        </view>
+                </view>
+        </view>
+        <view class="btn-bottom">
+                <button type="primary" class="flex-center" form-type="submit">确认</button>
+        </view>
+</form>

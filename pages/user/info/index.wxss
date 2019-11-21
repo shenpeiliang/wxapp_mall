@@ -1,0 +1,15 @@
+/* pages/user/info/index.wxss */
+@import '../../../style/form.wxss';
+.content-avatar{
+      justify-content: flex-end;
+}
+.avatar{
+        display: flex;
+        width: 72rpx;
+        height: 72rpx;
+        border-radius: 72rpx;
+        overflow: hidden;
+}
+.icon-right{
+        font-size:42rpx;
+}

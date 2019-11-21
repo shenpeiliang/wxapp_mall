@@ -1,0 +1,6 @@
+{
+        "usingComponents": {
+                "my-scrolltop": "/components/gotop/scrolltop",
+                "my-modal": "/components/modal/modal"
+        }
+}

@@ -1,0 +1,6 @@
+<!--components/loading/load.wxml-->
+<view class="loading" hidden="{{isLoading}}">
+        <image src="../../images/load.gif"/>
+        <text>正在加载中..</text>
+</view>
+<view class="loading load-complete" hidden="{{isLoadComplete}}">已全部加载完..</view>

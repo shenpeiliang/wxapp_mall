@@ -1,0 +1,88 @@
+<!--pages/user/order/lists/index.wxml-->
+<my-grant show="{{is_not_login}}" />
+<view class="tab-fixed">
+        <view class="col-1 section-white tab">
+                <block wx:for="{{tabs}}" wx:key="{{index}}">
+                        <view catchtap='selectTab' class="flex-center {{currentTab == index ? 'active' : ''}}" data-index="{{index}}" data-type="{{item.type}}">{{item.title}}</view>
+                </block>
+        </view>
+</view>
+<view class="section-fixed" style="height: {{windowHeight - 34}}px;">
+        <swiper style="height: {{windowHeight - 34}}px;" bindchange="tabChange" current="{{currentTab}}">
+                <block wx:for="{{tabs}}" wx:key="{{index}}">
+                        <swiper-item>
+                                <view wx:if="{{!pageData[index].lists || pageData[index].lists.length == 0}}" class="flex-center no-data">
+                                        <image src="../../../../images/no-data.png" class="flex-center" />
+                                        <view class="flex-center">没有符合条件的数据~</view>
+                                        <view class="btn-link-goods" catchtap='bindTap' data-route='goodsList'>逛逛商品~</view>
+                                </view>
+                                <scroll-view scroll-y bindscrolltolower="lower" scroll-with-animation wx:if="{{pageData[index].lists.length}}">
+                                        <block wx:for="{{pageData[index].lists}}" wx:for-item="store" wx:key="index">
+                                                <view class="section-con">
+                                                        <view class="col-1 section-white fill-box-10">
+                                                                <view class="col-1">
+                                                                        <view class="col-1 store">
+                                                                                <view class="flex-center iconfont icon-dianpu left"></view>
+                                                                                <view class="col-1 right txt-overflow">
+                                                                                        {{store.store_name}}
+                                                                                </view>
+                                                                                <view class="col-1 right section-status">
+                                                                                        <view wx:if="{{store.status == 1}}">待付款</view>
+                                                                                        <view wx:if="{{store.status == 2}}">已付款</view>
+                                                                                        <view wx:if="{{store.status == 3}}">待收货</view>
+                                                                                        <view wx:if="{{store.status == 4}}">已完成</view>
+                                                                                        <view wx:if="{{store.status == 5}}">已关闭</view>
+                                                                                </view>
+                                                                        </view>
+                                                                </view>
+                                                        </view>
+                                                        <view wx:for="{{store._childs}}" wx:key="index" class="col-1 section-white">
+                                                                <view>
+                                                                        <view class="col-1 goods-item">
+                                                                                <view class="col-1 right">
+                                                                                        <view class="img" catchtap='bindTap' data-id="{{item.goods_id}}" data-route='goodsDetail'>
+                                                                                                <image src="{{app.globalData.imgServer + item.small_img}}" />
+                                                                                        </view>
+                                                                                        <view class="col-1 goods">
+                                                                                                <view class="txt-overflow title" catchtap='bindTap' data-id="{{item.goods_id}}" data-route='goodsDetail'>{{item.goods_name}}</view>
+                                                                                                <view class="spec">规格：{{item.goods_spec_name}}</view>
+                                                                                                <view class="col-1 more">
+                                                                                                        <view class="txt-overflow price">￥{{item.price}}</view>
+                                                                                                        <view class="goods-spec-select-section">x{{item.quantity}}</view>
+                                                                                                </view>
+                                                                                        </view>
+                                                                                </view>
+                                                                        </view>
+                                                                </view>
+                                                        </view>
+                                                        <view class="col-1 section-white calculate">
+                                                                共
+                                                                <view class="num">{{store.goods_number}}</view>件商品
+                                                                <view class="txt-null"></view>
+                                                                合计：
+                                                                <view class="num">￥{{store.amount}}</view>
+                                                                <view class="txt-null"></view>
+                                                                运费：
+                                                                <view class="num">￥{{store.post_price}}</view>
+                                                        </view>
+                                                        <view class="col-1 section-white section-btn">
+                                                                <view class="item" catchtap='bindTap' data-id="{{store.id}}" data-route='userOrderDetail'>查看详情</view>
+                                                                <block wx:if="{{store.status == 1}}">
+                                                                        <view class="item btn-m" catchtap='bindTap' data-id="{{store.id}}" data-route='userOrderPay'>前往付款</view>
+                                                                        <view class="item" catchtap='bindCancel' data-id="{{store.id}}">取消订单</view>
+                                                                </block>
+                                                                <view class="item btn-m" catchtap='bindReceive' data-id="{{store.id}}" wx:if="{{store.status == 3}}">确认收货</view>
+                                                                <block wx:if="{{store.status == 4}}">
+                                                                        <view class="item btn-m" catchtap='bindTap' data-id="{{store.id}}" data-route='userOrderComment' wx:if="{{store.is_comment == 0}}">我要评价</view>
+                                                                </block>
+                                                        </view>
+                                                </view>
+                                        </block>
+                                        <!-- 加载提示s -->
+                                        <my-loading isLoading="{{pageData[index].isLoading}}" isLoadComplete="{{pageData[index].isLoadComplete}}" />
+                                </scroll-view>
+
+                        </swiper-item>
+                </block>
+        </swiper>
+</view>

@@ -1,0 +1,78 @@
+{
+        "pages": [
+                "pages/index/index",
+                "pages/logs/logs",
+                "pages/test/index",
+                "pages/goods/lists/index",
+                "pages/goods/detail/index",
+                "pages/goods/comment/index",
+                "pages/login/index",
+                "pages/user/home/index",
+                "pages/user/cart/index",
+                "pages/user/order/lists/index",
+                "pages/user/order/detail/index",
+                "pages/category/index",
+                "pages/user/safe/home/index",
+                "pages/user/safe/pass/index",
+                "pages/user/safe/email/index",
+                "pages/user/safe/tel/index",
+                "pages/user/info/index",
+                "pages/article/lists/index",
+                "pages/article/detail/index",
+                "pages/user/address/lists/index",
+                "pages/user/address/form/index",
+                "pages/user/order/comment/index",
+                "pages/user/order/form/index",
+                "pages/user/order/pay/index",
+                "pages/search/index",
+                "pages/timer/index"
+        ],
+        "window": {
+                "navigationBarBackgroundColor": "#fff",
+                "navigationBarTitleText": "手机淘宝",
+                "navigationBarTextStyle": "black",
+                "backgroundTextStyle": "dark",
+                "enablePullDownRefresh": false
+        },
+        "tabBar": {
+                "color": "#000000",
+                "selectedColor": "#1aad16",
+                "list": [
+                        {
+                                "pagePath": "pages/index/index",
+                                "text": "首页",
+                                "iconPath": "images/icon-home.png",
+                                "selectedIconPath": "images/icon-home-selected.png"
+                        },
+                        {
+                                "pagePath": "pages/category/index",
+                                "text": "分类",
+                                "iconPath": "images/icon-cate.png",
+                                "selectedIconPath": "images/icon-cate-selected.png"
+                        },
+                        {
+                                "pagePath": "pages/user/cart/index",
+                                "text": "购物车",
+                                "iconPath": "images/icon-cart.png",
+                                "selectedIconPath": "images/icon-cart-selected.png"
+                        },
+                        {
+                                "pagePath": "pages/user/home/index",
+                                "text": "会员中心",
+                                "iconPath": "images/icon-user.png",
+                                "selectedIconPath": "images/icon-user-selected.png"
+                        },
+                        {
+                                "pagePath": "pages/goods/lists/index",
+                                "text": "更多",
+                                "iconPath": "images/icon-more.png",
+                                "selectedIconPath": "images/icon-more-selected.png"
+                        }
+                ]
+        },
+        "usingComponents": {
+                "my-loading": "/components/loading/load",
+                "my-grant": "/components/grant/grant"
+        },
+        "sitemapLocation": "sitemap.json"
+}

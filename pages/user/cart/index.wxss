@@ -1,0 +1,4 @@
+@import '../../../style/order.wxss';
+.goods-spec-select-section{
+       line-height: 66rpx; 
+}

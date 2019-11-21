@@ -1,0 +1,42 @@
+/* pages/article/detail/index.wxss */
+
+.header {
+        margin-bottom: 50rpx;
+}
+
+.header .title {
+        font-size: 34rpx;
+        line-height: 44rpx;
+        margin-bottom: 40rpx;
+}
+
+.header .time {
+        display: flex;
+        height: 68rpx;
+        align-items: center;
+        border-bottom: 2rpx solid #f4f4f4;
+}
+
+.header .time view {
+        color: #999;
+        font-size: 26rpx;
+}
+
+.header .time .click {
+        align-items: center;
+}
+
+.header .time .dateline {
+        justify-content: flex-end;
+}
+
+.content {
+        width: 100%;
+        overflow: hidden;
+}
+
+.content rich-text .rich-text-img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+}

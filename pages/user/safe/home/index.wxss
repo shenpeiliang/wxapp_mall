@@ -1,0 +1,48 @@
+/* pages/user/safe/index.wxss */
+
+.header {
+        color: #8a6d3b;
+        height: 58rpx;
+        font-size: 30rpx;
+}
+
+.item {
+        flex-wrap: wrap;
+}
+
+.item-1 {
+        margin: 10rpx 0 20rpx 0;
+}
+
+.item-1 .icon {
+        width: 78rpx;
+        font-size: 46rpx;
+        color: #518523;
+        font-weight: bold;
+}
+
+.item-1 .title {
+        flex: auto;
+        align-items: center;
+        display: flex;
+        font-size: 32rpx;
+        font-weight: bold;
+}
+
+.item-1 .btn {
+        width: 168rpx;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+        color: #fff;
+        border-radius: 8rpx;
+        height: 68rpx;
+        font-size: 30rpx;
+}
+
+.item-2 {
+        color: #999;
+        font-size: 30rpx;
+}
+.item-1 .icon-youxiang{
+        color:#FCBF0C;
+}

@@ -1,0 +1,116 @@
+/**app.wxss**/
+@import './style/fonts/iconfont.wxss';
+
+page {
+        height: 100%;
+        background-color: #f4f4f4;
+        font-size: 28rpx;
+}
+
+view, scroll-view, text, image, button, input, label, radio, picker, picker-view,
+slider, form, checkbox, swiper, button {
+        box-sizing: border-box;
+        font-family: "微软雅黑", Helvetica, Arial, sans-serif;
+        color: #2c2c2c;
+}
+
+.section {
+        padding: 10rpx 20rpx;
+}
+
+.container {
+        width: 100%;
+        padding: 10rpx 20rpx;
+}
+
+.section-white {
+        background-color: #fff;
+}
+
+.fill-box-10 {
+        margin-top: 10rpx;
+}
+
+.fill-box-8 {
+        margin-top: 8rpx;
+}
+
+.fill-box-6 {
+        margin-top: 6rpx;
+}
+
+.fill-box-4 {
+        margin-top: 4rpx;
+}
+
+.fill-box-2 {
+        margin-top: 2rpx;
+}
+
+.row {
+        margin-left: -20rpx;
+        margin-right: -20rpx;
+}
+
+.col-5 {
+        display: flex;
+        flex: 0 0 20%;
+        overflow: hidden;
+}
+
+.col-4 {
+        display: flex;
+        flex: 0 0 25%;
+        overflow: hidden;
+}
+
+.col-3 {
+        display: flex;
+        flex: 0 0 33.3333%;
+        overflow: hidden;
+}
+
+.col-2 {
+        display: flex;
+        flex: 0 0 50%;
+        overflow: hidden;
+}
+
+.col-1 {
+        display: flex;
+        flex: 0 0 100%;
+        overflow: hidden;
+}
+
+.txt-overflow {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+}
+
+.flex-center {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+}
+
+scroll-view {
+        height: 100%;
+}
+
+.no-data {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50rpx;
+}
+
+.no-data image {
+        width: 160rpx;
+        height: 160rpx;
+}
+
+.no-data view {
+        color: #999;
+        height: 68rpx;
+}

@@ -1,0 +1,16 @@
+/* components/loading/load.wxss */
+.loading{
+        padding:20rpx;
+        text-align:center;
+        color:#999;
+        font-size:28rpx;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:44px;
+}
+.loading image{
+       width: 16px;
+       height: 16px;
+       margin-right: 3px;
+}

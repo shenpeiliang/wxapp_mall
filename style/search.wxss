@@ -1,0 +1,98 @@
+@import './fonts/iconfont.wxss';
+
+.search-main {
+        background-color: #fff;
+        margin-top: 60px;
+        position: fixed;
+        left: 0;
+        top: 0;
+}
+
+.search-top {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 998;
+        padding: 20rpx 10rpx;
+        font-size: 28rpx;
+        justify-content: center;
+        align-items: center;
+        background-color: #efefef;
+        display: block;
+        width: 100%;
+}
+
+.search-top .btn-cancle {
+        padding: 0 10rpx;
+}
+
+.search-container {
+        flex: auto;
+        background-color: #fff;
+        justify-content: center;
+        align-items: center;
+        padding: 14rpx 8rpx;
+        border-radius: 6rpx;
+        display: flex;
+}
+
+.search-container icon {
+        margin-right: 10rpx;
+}
+
+.search-container input {
+        width: 95%;
+}
+
+.search-history {
+        background-color: #fff;
+        font-size: 30rpx;
+        width: 100%;
+}
+
+.search-history > view {
+        padding: 10rpx;
+        border-bottom: 1rpx solid #efefef;
+        font-size: 30rpx;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+}
+
+.search-history > view {
+        padding: 10rpx;
+        border-bottom: 1rpx solid #efefef;
+        font-size: 30rpx;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+}
+
+.btnClear text {
+        border: 1rpx solid #dedede;
+        padding: 16rpx 24rpx;
+        border-radius: 18rpx;
+}
+
+.btnClear {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 46rpx;
+        margin-bottom:38rpx;
+        border: none;
+}
+
+.close {
+        color: rgba(191, 191, 191, 0.7);
+        border-radius: 50%;
+        line-height: 60rpx;
+        text-align: center;
+        height: 60rpx;
+        width: 60rpx;
+        font-size: 28rpx;
+}
+
+.close::before {
+        content: "\2716";
+}

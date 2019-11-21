@@ -1,0 +1,109 @@
+<!--pages/user/order/pay/index.wxml-->
+<my-grant show="{{is_not_login}}" />
+<view class="col-1 section-white order-address">
+        <view class="col-1 section">
+                <view class="flex-center left">
+                        <view class="flex-center bg">
+                                <view class="iconfont icon-left icon-dizhi"></view>
+                        </view>
+                </view>
+                <view class="col-1 right">
+                        <view class="col-1 section-1">
+                                收货人：{{pageData.name}}
+                                <text class="tel">{{pageData.mobile}}</text>
+                        </view>
+                        <view class="col-1 section-2">
+                                收货地址：{{pageData.province + pageData.city + pageData.county + pageData.address}}
+                        </view>
+                </view>
+        </view>
+</view>
+<view class="col-1 section-white bg-color" style="background: url('{{app.globalData.imgServer}}/file/images/bg-color.png')"></view>
+
+<view class="section-con">
+        <view class="col-1 section-white fill-box-10">
+                <view class="col-1">
+                        <view class="col-1 store">
+                                <view class="flex-center iconfont icon-dianpu left"></view>
+                                <view class="col-1 right txt-overflow">
+                                        {{pageData.store_name}}
+                                </view>
+                        </view>
+                </view>
+        </view>
+        <view wx:for="{{pageData._childs}}" wx:key="index" class="col-1 section-white">
+                <view>
+                        <view class="col-1 goods-item">
+                                <view class="col-1 right">
+                                        <view class="img" catchtap='bindTap' data-id="{{item.goods_id}}" data-route='goodsDetail'>
+                                                <image src="{{app.globalData.imgServer + item.small_img}}" />
+                                        </view>
+                                        <view class="col-1 goods">
+                                                <view class="txt-overflow title" catchtap='bindTap' data-id="{{item.goods_id}}" data-route='goodsDetail'>{{item.goods_name}}</view>
+                                                <view class="spec">规格：{{item.goods_spec_name}}</view>
+                                                <view class="col-1 more">
+                                                        <view class="txt-overflow price">￥{{item.price}}</view>
+                                                        <view class="goods-spec-select-section">x{{item.quantity}}</view>
+                                                </view>
+                                        </view>
+                                </view>
+                        </view>
+                </view>
+        </view>
+</view>
+
+<view class="col-1 section-white fill-box-10">
+        <view class="container">
+                <view class="col-1 section-col-2 section-col-txt">
+                        买家留言：{{pageData.message}}
+                </view>
+        </view>
+</view>
+
+<view class="col-1 section-white fill-box-10 order-detail-calculate-footer">
+        <view class="container">
+                <view class="col-1 section-col-2 order-detail-calculate">
+                        <view class="col-2 left">
+                                商品数量
+                        </view>
+                        <view class="col-2 right">
+                                {{pageData.goods_number}}
+                        </view>
+                </view>
+                <view class="col-1 section-col-2 order-detail-calculate">
+                        <view class="col-2 left">
+                                商品金额
+                        </view>
+                        <view class="col-2 right">
+                                ￥{{pageData.amount}}
+                        </view>
+                </view>
+
+                <view class="col-1 section-col-2 order-detail-calculate">
+                        <view class="col-2 left">
+                                运费
+                        </view>
+                        <view class="col-2 right">
+                                ￥{{pageData.post_price}}
+                        </view>
+                </view>
+        </view>
+
+</view>
+
+
+<view class="section-white footer-section" wx:if="{{pageData}}">
+        <view class="col-1 footer-section-item">
+                <view class="flex-center left">
+
+                </view>
+                <view class="right">
+                        <view class="flex-center left">
+                                合计：
+                                <text class="footer-pay-money">￥{{pageData.pay_money}}</text>
+                        </view>
+                        <view class="flex-center right-item-2" catchtap='bindConfirm' data-pid="{{pageData.pay_id}}">确认支付</view>
+                </view>
+        </view>
+
+</view>

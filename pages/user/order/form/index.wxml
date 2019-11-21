@@ -1,0 +1,122 @@
+<!--pages/user/order/form/index.wxml-->
+<my-grant show="{{is_not_login}}" />
+<view class="col-1 section-white order-address" catchtap='bindSelectAddress' data-route='userAddress'>
+        <view class="col-1 section">
+                <view class="flex-center left">
+                        <view class="flex-center bg">
+                                <view class="iconfont icon-left icon-dizhi"></view>
+                        </view>
+                </view>
+                <view class="col-1 right" wx:if="{{pageData.address}}">
+                        <view class="col-1 section-1">
+                                收货人：{{pageData.address.name}}
+                                <text class="tel">{{pageData.address.mobile}}</text>
+                        </view>
+                        <view class="col-1 section-2">
+                                收货地址：{{pageData.address.province + pageData.address.city + pageData.address.county + pageData.address.address}}
+                        </view>
+                </view>
+                <view class="col-1 right" wx:if="{{!pageData.address}}">
+                        <view class="col-1 flex-center no-default-address">
+                                请选择收货信息
+                        </view>                        
+                </view>
+                <view class="flex-center iconfont icon-youjiantou icon-right"></view>
+        </view>
+</view>
+<view class="col-1 section-white bg-color" style="background: url('{{app.globalData.imgServer}}/file/images/bg-color.png')"></view>
+
+<block wx:for="{{pageData.lists}}" wx:for-item="store" wx:for-index="idx" wx:key="index">
+<view class="section-con">
+        <view class="col-1 section-white fill-box-10">
+                <view class="col-1">
+                        <view class="col-1 store">
+                                <view class="flex-center iconfont icon-dianpu left"></view>
+                                <view class="col-1 right txt-overflow">
+                                        {{store.sname}}
+                                </view>
+                        </view>
+                </view>
+        </view>
+        <view wx:for="{{store.goods}}" wx:key="index" class="col-1 section-white">
+                <view>
+                        <view class="col-1 goods-item">
+                                <view class="col-1 right">
+                                        <view class="img" catchtap='bindTap' data-id="{{item.id}}" data-route='goodsDetail'>
+                                                <image src="{{app.globalData.imgServer + item.small_img}}" />
+                                        </view>
+                                        <view class="col-1 goods">
+                                                <view class="txt-overflow title" catchtap='bindTap' data-id="{{item.id}}" data-route='goodsDetail'>{{item.title}}</view>
+                                                <view class="spec">规格：{{item.speces.name}}</view>
+                                                <view class="col-1 more">
+                                                        <view class="txt-overflow price">￥{{item.speces.price}}</view>
+                                                        <view class="goods-spec-select-section">x{{item.quantity}}</view>
+                                                </view>
+                                        </view>
+                                </view>
+                        </view>
+                </view>
+        </view>
+</view>
+<view class="col-1 section-white fill-box-2">
+        <view class="container">
+                <view class="col-1 section-col-2 section-col-txt">
+                        <view class="left">
+                                买家留言
+                        </view>
+                        <view class="right">
+                                <textarea placeholder="请输入留言" bindinput="bindInput" data-sid="{{idx}}"></textarea>
+                        </view>
+                </view>
+        </view>
+</view>
+</block>
+
+<view class="col-1 section-white fill-box-10 order-detail-calculate-footer">
+        <view class="container">
+                <view class="col-1 section-col-2 order-detail-calculate">
+                        <view class="col-2 left">
+                                商品数量
+                        </view>
+                        <view class="col-2 right">
+                                {{pageData.total.quantity}}
+                        </view>
+                </view>
+                <view class="col-1 section-col-2 order-detail-calculate">
+                        <view class="col-2 left">
+                                商品金额
+                        </view>
+                        <view class="col-2 right">
+                                ￥{{pageData.total.money}}
+                        </view>
+                </view>
+
+                <view class="col-1 section-col-2 order-detail-calculate">
+                        <view class="col-2 left">
+                                运费
+                        </view>
+                        <view class="col-2 right">
+                                ￥{{pageData.total.freight}}
+                        </view>
+                </view>
+        </view>
+
+</view>
+
+
+<view class="section-white footer-section" wx:if="{{pageData}}">
+        <view class="col-1 footer-section-item">
+                <view class="flex-center left">
+
+                </view>
+                <view class="right">
+                        <view class="flex-center left">
+                                合计：
+                                <text class="footer-pay-money">￥{{pageData.total.pay_money}}</text>
+                        </view>
+                        <view class="flex-center right-item-2" wx:if="{{!jsapiParams.length}}" catchtap='bindConfirm'>提交订单</view>
+                        <view class="flex-center right-item-2" wx:if="{{jsapiParams.length}}" catchtap='bindPay'>去支付</view>
+                </view>
+        </view>
+
+</view>

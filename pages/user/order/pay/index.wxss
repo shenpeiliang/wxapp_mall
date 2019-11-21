@@ -1,0 +1,103 @@
+/* pages/user/order/pay/index.wxss */
+@import '../../../../style/order.wxss';
+
+.order-address {
+        padding: 20rpx 0;
+}
+
+.order-address .section .left {
+        width: 80rpx;
+}
+
+.order-address .section .left .bg {
+        width: 64rpx;
+        height: 64rpx;
+        border-radius: 64rpx;
+        background-color: #ff5000;
+}
+
+.order-address .section .left .bg .iconfont {
+        color: #fff;
+}
+
+.order-address .section .right {
+        flex-wrap: wrap;
+        padding-left: 10px;
+        font-size: 32rpx;
+        flex: auto;
+}
+
+.order-address .section .right .tel {
+        padding-left: 18rpx;
+        font-size: 30rpx;
+}
+
+.order-address .section .right .section-2 {
+        padding-top: 10rpx;
+}
+
+.bg-color {
+        height: 8px;
+        background-size: cover;
+        background-repeat: repeat-x;
+}
+
+.icon-right {
+        display: flex;
+        width: 42rpx;
+        flex: none;
+        font-size: 68rpx;
+        color: #999;
+}
+
+.section-col-2 view {
+        font-size: 32rpx;
+        height: 64rpx;
+        align-items: center;
+}
+
+.section-col-2 .right {
+        justify-content: flex-end;
+}
+
+.order-detail-calculate-total {
+        display: flex;
+        justify-content: flex-end;
+        height: 120rpx;
+        align-items: center;
+        font-size: 36rpx;
+        font-weight: bold;
+}
+
+.order-detail-calculate-total text {
+        color: #b1000f;
+}
+
+.section-col-txt{
+        position: relative;
+        height:auto;
+overflow:initial;
+}
+.section-col-txt  .left {
+        width: 152rpx;
+        position: absolute;
+        left: 0;
+        top: 0;
+}
+.section-col-txt .right{
+        margin-left: 156rpx;
+        height: auto;
+}
+.section-col-txt textarea {
+        height: 58px;
+        width: 280px;
+}
+
+.order-detail-calculate-footer{
+        margin-bottom: 150rpx;
+}
+
+.no-default-address{
+        color: #999;
+        justify-content: flex-start;
+}

@@ -1,0 +1,23 @@
+<!--pages/article/lists/index.wxml-->
+<my-scrolltop id="scrolltop" bind:myEvent="scrollTop" />
+<scroll-view scroll-y='true' scroll-top='{{topNum}}' bindscroll='bindScroll' bindscrolltolower='lower'>
+        <view wx:if="{{pageData.length == 0}}" class="flex-center no-data">
+                <image src="../../../images/no-data.png" class="flex-center" />
+                <view class="flex-center">没有符合条件的数据~</view>
+        </view>
+        <view wx:for-items="{{pageData}}" wx:key="index" class="col-1 section-white fill-box-4">
+                <view class="container">
+                        <view class="col-1 item" catchtap='bindTap' data-route='articleDetail' data-id="{{item.id}}">
+                                <view class="left">
+                                        <view class="title">{{item.title}}</view>
+                                        <view class="dateline">{{item.dateline}}</view>
+                                </view>
+                                <view class="right">
+                                        <image src="{{item.small_img}}" />
+                                </view>
+                        </view>
+                </view>
+        </view>
+        <!-- 加载提示s -->
+        <my-loading isLoading="{{isLoading}}" isLoadComplete="{{isLoadComplete}}" />
+</scroll-view>

@@ -1,0 +1,36 @@
+<!--pages/user/safe/pass/index.wxml-->
+<my-grant show="{{is_not_login}}" />
+<form bindsubmit="formSubmit">
+        <view class="container section-white">
+                <view class="col-1 fill-box-4 section-main">
+                        <view class="flex-center item">
+                                <view class="title">旧密码</view>
+                                <view class="content">
+                                        <input type="text" password="{{inputConfig.pwdOld.isPassword}}" name="pwdOld" placeholder="请输入原始密码" />
+                                </view>
+                                <view class="iconfont {{inputConfig.pwdOld.icon}} icon-right" catchtap='changeInputType' data-item='pwdOld'></view>
+                        </view>
+                </view>
+                <view class="col-1 fill-box-4 section-main">
+                        <view class="flex-center item">
+                                <view class="title">新密码</view>
+                                <view class="content">
+                                        <input type="text" password="{{inputConfig.pwdNew.isPassword}}" name="pwdNew" placeholder="请输入新密码" />
+                                </view>
+                                <view class="iconfont {{inputConfig.pwdNew.icon}} icon-right" catchtap='changeInputType' data-item='pwdNew'></view>
+                        </view>
+                </view>
+                <view class="col-1 fill-box-4 section-bottom">
+                        <view class="flex-center item">
+                                <view class="title">确认密码</view>
+                                <view class="content">
+                                        <input type="text" password="{{inputConfig.pwdNewRe.isPassword}}" name="pwdNewRe" placeholder="请输入确认密码" />
+                                </view>
+                                <view class="iconfont {{inputConfig.pwdNewRe.icon}} icon-right" catchtap='changeInputType' data-item='pwdNewRe'></view>
+                        </view>
+                </view>
+        </view>
+        <view class="btn-bottom">
+                <button type="primary" class="flex-center" form-type="submit">确认</button>
+        </view>
+</form>

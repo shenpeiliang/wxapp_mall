@@ -1,0 +1,87 @@
+<!--pages/user/cart/index.wxml-->
+<my-grant show="{{is_not_login}}" />
+<scroll-view scroll-y='true' class="section-main">
+        <view wx:if="{{!pageData}}" class="flex-center no-data">
+                <image src="../../../images/no-data.png" class="flex-center" />
+                <view class="flex-center">没有符合条件的数据~</view>
+                <view class="btn-link-goods" catchtap='bindTap' data-route='goodsList'>逛逛商品~</view>
+        </view>
+        <block wx:for="{{pageData}}" wx:for-item="store" wx:key="index">
+                <view class="section-con">
+                        <view class="col-1 section-white fill-box-10">
+                                <view>
+                                        <view class="col-1 store">
+                                                <view class="flex-center left">
+                                                        <checkbox-group bindchange="bindCheck" data-sid="{{store.sid}}" data-type="store" class="flex-center">
+                                                                <label class="checkbox">
+                                                                        <checkbox value='{{store.sid}}' checked="{{store.is_selected}}" />
+                                                                </label>
+                                                        </checkbox-group>
+                                                </view>
+                                                <view class="col-1 right txt-overflow">
+                                                        {{store.sname}}
+                                                </view>
+                                        </view>
+                                </view>
+                        </view>
+                        <view wx:for="{{store.goods}}" wx:key="index" class="col-1 section-white fill-box-2">
+                                <view>
+                                        <view class="col-1 goods-item">
+                                                <view class="flex-center left">
+                                                        <checkbox-group bindchange="bindCheck" data-sid="{{item.store_id}}" data-gid="{{index}}" data-type="goods" class="flex-center">
+                                                                <label class="checkbox">
+                                                                        <checkbox value='{{item.id}}' checked="{{item.is_selected}}" />
+                                                                </label>
+                                                        </checkbox-group>
+                                                </view>
+                                                <view class="col-1 right">
+                                                        <view class="img" catchtap='bindTap' data-id="{{item.goods_id}}" data-route='goodsDetail'>
+                                                                <image src="{{app.globalData.imgServer + item.small_img}}" />
+                                                        </view>
+                                                        <view class="col-1 goods">
+                                                                <view class="txt-overflow title" catchtap='bindTap' data-id="{{item.goods_id}}" data-route='goodsDetail'>{{item.goods_name}}</view>
+                                                                <view class="spec">规格：{{item.goods_spec_name}}</view>
+                                                                <view class="col-1 more">
+                                                                        <view class="txt-overflow price">￥{{item.price}}</view>
+                                                                        <view class="goods-spec-select-section">
+                                                                                <view class="number">
+                                                                                        <view class="flex-center num-icon num-ac {{numAcZero}}" data-sid="{{item.store_id}}" data-index="{{index}}" catchtap="bindChangeNum" data-action="ac">-</view>
+                                                                                        <view class="flex-center num-input">
+                                                                                                <input type="number" disabled="true" value='{{item.number}}' />
+                                                                                        </view>
+                                                                                        <view class="flex-center num-icon num-dc" data-sid="{{item.store_id}}" data-index="{{index}}" catchtap="bindChangeNum" data-action="dc">+</view>
+                                                                                </view>
+                                                                        </view>
+                                                                </view>
+                                                        </view>
+                                                </view>
+                                        </view>
+                                </view>
+                        </view>
+                </view>
+        </block>
+
+</scroll-view>
+<view class="section-white footer-section" wx:if="{{pageData}}">
+        <view class="col-1 footer-section-item">
+                <view class="flex-center left">
+                        <checkbox-group bindchange="bindCheck" data-type="all" class="flex-center">
+                                <label class="checkbox">
+                                        <checkbox value='all' checked="{{selectAllStatus}}" />全选
+                                </label>
+                        </checkbox-group>
+                        <view class="del-btn" catchtap='bindDel'>删除选择</view>
+                </view>
+                <view class="right">
+                        <view class="right-item-1">
+                                <view class="right-item-1-1">
+                                        <view class="right-item-1-1-1">合计：</view>
+                                        <view class="right-item-1-1-2">￥{{payData.money}}</view>
+                                </view>
+                                <view class="right-item-1-2">不含运费</view>
+                        </view>
+                        <view class="flex-center right-item-2" catchtap='bindConfirm'>结算（{{payData.num}}）</view>
+                </view>
+        </view>
+
+</view>
