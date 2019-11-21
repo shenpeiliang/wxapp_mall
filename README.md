@@ -23,6 +23,8 @@
 
 ![image](https://github.com/shenpeiliang/wxapp_mall/blob/master/images/rendering/7.png)
 
+![image](https://github.com/shenpeiliang/wxapp_mall/blob/master/images/rendering/8.png)
+
 ### 结束语
 
 麻雀虽小，但五脏俱全，有需要的朋友可以下载下来进行优化修改！
