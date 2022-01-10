@@ -9,21 +9,21 @@
 
 ### 效果图
 
-![image](https://github.com/shenpeiliang/wxapp_mall/blob/master/images/rendering/1.png)
+![image](images/rendering/1.png)
 
-![image](https://github.com/shenpeiliang/wxapp_mall/blob/master/images/rendering/2.png)
+![image](images/rendering/2.png)
 
-![image](https://github.com/shenpeiliang/wxapp_mall/blob/master/images/rendering/3.png)
+![image](images/rendering/3.png)
 
-![image](https://github.com/shenpeiliang/wxapp_mall/blob/master/images/rendering/4.png)
+![image](images/rendering/4.png)
 
-![image](https://github.com/shenpeiliang/wxapp_mall/blob/master/images/rendering/5.png)
+![image](images/rendering/5.png)
 
-![image](https://github.com/shenpeiliang/wxapp_mall/blob/master/images/rendering/6.png)
+![image](images/rendering/6.png)
 
-![image](https://github.com/shenpeiliang/wxapp_mall/blob/master/images/rendering/7.png)
+![image](images/rendering/7.png)
 
-![image](https://github.com/shenpeiliang/wxapp_mall/blob/master/images/rendering/8.png)
+![image](images/rendering/8.png)
 
 ### 结束语
 
